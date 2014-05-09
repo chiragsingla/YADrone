@@ -17,19 +17,29 @@ public class ConsoleReader {
 		this.commander = commander;
 	}
 
-	public void handleCommands() {
+	public void handleCommands() throws InterruptedException {
 		Scanner scanIn = new Scanner(System.in);
-		String input = scanIn.nextLine();
-		while (!input.toLowerCase().contains(END)) {
-			System.out.println(input);
-			input = scanIn.nextLine();
-			doCommand(input);
-		}
-		scanIn.close();
+//		String input = scanIn.nextLine();
+//		while (!input.toLowerCase().contains(END)) {
+//			System.out.println(input);
+//			input = scanIn.nextLine();
+//			doCommand(input);
+//			System.out.println("We are done here!");
+//		}
+		doCommand("takeoff");
+		Thread.currentThread().sleep(1000L);
+		doCommand("m 10,0,0");
+		doCommand("m -20,0,0");
+		doCommand("m 0,10,0");
+		doCommand("m 0,-20,0");
+		doCommand("m 0,0,10");
+		doCommand("m 0,0,-20");
+		doCommand("land");
+//		scanIn.close();
 		System.out.println("We are done here!");
 	}
 
-	private void doCommand(String input) {
+	private void doCommand(String input) throws InterruptedException {
 		input = input.toLowerCase();
 		System.out.println("Command is input");
 		if (TAKEOFFANDLAND.equals(input)) {

@@ -18,7 +18,7 @@ public class MainFile {
 				}
 			});
 			HackathonCommander commander = new HackathonCommander(
-					drone.getCommandManager(), 5000L);
+					drone.getCommandManager(), 1000L);
 			drone.start();
 			ConsoleReader consoleReader = new ConsoleReader(commander);
 //			DownloadVideoStream.downloadVideaStream(drone, "/Users/cchirag");

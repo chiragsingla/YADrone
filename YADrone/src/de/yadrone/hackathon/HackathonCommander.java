@@ -28,11 +28,11 @@ public class HackathonCommander {
 	public void takeOffAndLand() {
 		// WaitFor is in milliseconds
 		takeOff();
-		manager.waitFor(5000);
+		manager.waitFor(1000);
 		land();
 	}
 
-	public void move(double x, double y, double z) {
+	public void move(double x, double y, double z) throws InterruptedException {
 		// x is forward
 		// y is left
 		// z is top
@@ -42,29 +42,15 @@ public class HackathonCommander {
 		// double vectorSize = Math.sqrt(xSquare + ySquare + zSquare);
 		double deltaByThree = deltaTime / 3;
 		long deltaByThreeLong = new Double(deltaByThree).longValue();
-		if (z > 0) {
 			manager.up(new Double(z / deltaByThree).intValue()).doFor(
 					deltaByThreeLong);
-		} else {
-			manager.down(new Double(-1 * z / deltaByThree).intValue()).doFor(
-					deltaByThreeLong);
-		}
-
-		if (y > 0) {
+			manager.freeze();
 			manager.goLeft(new Double(y / deltaByThree).intValue()).doFor(
 					deltaByThreeLong);
-		} else {
-			manager.goRight(new Double(-1 * y / deltaByThree).intValue())
-					.doFor(deltaByThreeLong);
-		}
-
-		if (x > 0) {
+			manager.freeze();
 			manager.forward(new Double(x / deltaByThree).intValue()).doFor(
 					deltaByThreeLong);
-		} else {
-			manager.down(new Double(-1 * x / deltaByThree).intValue()).doFor(
-					deltaByThreeLong);
-		}
+			manager.freeze();
 	}
 
 }
