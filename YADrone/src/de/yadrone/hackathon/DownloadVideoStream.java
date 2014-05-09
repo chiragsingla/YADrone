@@ -13,7 +13,7 @@ public class DownloadVideoStream {
 	private final static String SUFFIX = ".png";
 	private final static String PNG = "PNG";
 	
-	public static void DownloadVideaStream(final IARDrone drone, String downloadDir) {
+	public static void downloadVideaStream(final IARDrone drone, String downloadDir) {
 		if (null == drone) {
 			throw new IllegalArgumentException("drone obj is null");
 		}
