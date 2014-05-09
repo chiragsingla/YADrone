@@ -28,10 +28,10 @@ public class TutorialMain
 			drone.start();
 			
 			// Tutorial Section 2
-//			new TutorialAttitudeListener(drone);
+			new TutorialAttitudeListener(drone);
 			
 			// Tutorial Section 3
-//			new TutorialVideoListener(drone);
+			new TutorialVideoListener(drone);
 			
 			// Tutorial Section 4
 //			TutorialCommander commander = new TutorialCommander(drone);

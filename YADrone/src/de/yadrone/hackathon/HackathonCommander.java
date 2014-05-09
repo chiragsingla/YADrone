@@ -40,17 +40,26 @@ public class HackathonCommander {
 		// double ySquare = Math.pow(y, 2);
 		// double zSquare = Math.pow(z, 2);
 		// double vectorSize = Math.sqrt(xSquare + ySquare + zSquare);
-		double deltaByThree = deltaTime / 3;
-		long deltaByThreeLong = new Double(deltaByThree).longValue();
-			manager.up(new Double(z / deltaByThree).intValue()).doFor(
-					deltaByThreeLong);
+//		double deltaByThree = deltaTime / 3;
+		long deltaByThreeLong = new Double(deltaTime).longValue();
+		manager.move(Double.valueOf(x).intValue(), Double.valueOf(y).intValue(), Double.valueOf(z).intValue(), 0).doFor(deltaTime);
+
+//		manager.hover();
+//		Thread.sleep(1000L);
+
+		
+//			manager.up(new Double(z / deltaByThree).intValue()).doFor(
+//					deltaByThreeLong);
+//			manager.freeze();
+//			Thread.sleep(deltaByThreeLong);
+//			manager.goLeft(new Double(y / deltaByThree).intValue()).doFor(
+//					deltaByThreeLong);
+//			manager.freeze();
+//			Thread.sleep(deltaByThreeLong);
+//			manager.forward(new Double(x / deltaByThree).intValue()).doFor(
+//					deltaByThreeLong);
 			manager.freeze();
-			manager.goLeft(new Double(y / deltaByThree).intValue()).doFor(
-					deltaByThreeLong);
-			manager.freeze();
-			manager.forward(new Double(x / deltaByThree).intValue()).doFor(
-					deltaByThreeLong);
-			manager.freeze();
+			Thread.sleep(deltaByThreeLong);
 	}
 
 }

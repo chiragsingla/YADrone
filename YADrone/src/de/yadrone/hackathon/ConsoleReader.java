@@ -18,7 +18,7 @@ public class ConsoleReader {
 	}
 
 	public void handleCommands() throws InterruptedException {
-		Scanner scanIn = new Scanner(System.in);
+//		Scanner scanIn = new Scanner(System.in);
 //		String input = scanIn.nextLine();
 //		while (!input.toLowerCase().contains(END)) {
 //			System.out.println(input);
@@ -27,13 +27,15 @@ public class ConsoleReader {
 //			System.out.println("We are done here!");
 //		}
 		doCommand("takeoff");
-		Thread.currentThread().sleep(1000L);
-		doCommand("m 10,0,0");
-		doCommand("m -20,0,0");
-		doCommand("m 0,10,0");
-		doCommand("m 0,-20,0");
-		doCommand("m 0,0,10");
-		doCommand("m 0,0,-20");
+		Thread.currentThread().sleep(5000L);
+		
+		for(int i=1; i<40; i++){
+			if(AtomicTest.x.get()>0){
+				doCommand("m -1,0,0");	
+			} else {
+				doCommand("m 1,0,0");
+			}
+		}
 		doCommand("land");
 //		scanIn.close();
 		System.out.println("We are done here!");
