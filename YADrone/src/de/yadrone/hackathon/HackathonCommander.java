@@ -10,6 +10,7 @@ public class HackathonCommander {
 
 	public HackathonCommander(CommandManager manager, long deltaTime) {
 		this.manager = manager;
+//		this.manager.
 		this.deltaTime = deltaTime;
 	}
 

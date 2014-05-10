@@ -28,14 +28,19 @@ public class ConsoleReader {
 //		}
 		doCommand("takeoff");
 		Thread.currentThread().sleep(5000L);
-		
-		for(int i=1; i<40; i++){
-			if(AtomicTest.x.get()>0){
-				doCommand("m -1,0,0");	
-			} else {
-				doCommand("m 1,0,0");
-			}
-		}
+		doCommand("m 1,0,0");
+//		commander.f
+		Thread.sleep(2000L);
+		doCommand("m -2,0,0");
+//		if(doC)
+//		for(int i=1; i<40; i++){
+//			
+////			if(AtomicTest.x.get()>0){
+////				doCommand("m -1,0,0");	
+////			} else {
+////				doCommand("m 1,0,0");
+////			}
+//		}
 		doCommand("land");
 //		scanIn.close();
 		System.out.println("We are done here!");
